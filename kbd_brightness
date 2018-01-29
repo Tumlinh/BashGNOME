@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Change keyboard brightness
+
+file1="/sys/class/leds/asus::kbd_backlight/brightness"
+file2="/sys/class/leds/asus::kbd_backlight/max_brightness"
+lvl=$(cat "$file1")
+max_lvl=$(cat "$file2")
+if (( $# > 0 )); then
+	if [[ "$1" == "inc" ]]; then
+		new_lvl=$((lvl + 1))
+	elif [[ "$1" == "dec" ]]; then
+		new_lvl=$((lvl - 1))
+	else	new_lvl="$1"
+	fi
+	if [[ "$new_lvl" -ge 0 && "$new_lvl" -le "max_lvl" ]]; then
+		echo "$new_lvl" > "$file1"
+	fi
+else
+	echo "$lvl/$max_lvl"
+fi

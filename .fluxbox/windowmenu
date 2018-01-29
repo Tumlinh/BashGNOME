@@ -1,0 +1,19 @@
+[begin]
+  [shade]
+  [stick]
+  [maximize]
+  [iconify]
+  [raise]
+  [lower]
+  [settitledialog]
+  [sendto]
+  [layer]
+  [alpha]
+  [extramenus]
+#  [ArrangeWindowsStackLeft] (Arrange windows left)
+#  [ArrangeWindowsStackRight] (Arrange windows right)
+  [exec] (Change window geometry) {~/.fluxbox/scripts/chwing.sh}
+  [separator]
+  [close]
+  [kill]
+[end]
