@@ -170,8 +170,8 @@ None XF86AudioMute :Exec amixer sset Master,0 toggle
 #None XF86MonBrightnessDown :Exec /usr/bin/xbacklight -dec 5%
 
 # keyboard brightness
-None XF86KbdBrightnessUp :Exec sudo /usr/bin/kbd_brightness inc
-None XF86KbdBrightnessDown :Exec sudo /usr/bin/kbd_brightness dec
+None XF86KbdBrightnessUp :Exec pkexec /usr/bin/kbd_brightness inc
+None XF86KbdBrightnessDown :Exec pkexec /usr/bin/kbd_brightness dec
 
 # touchpad
 None XF86TouchpadToggle :Exec ~/sh/touchpad.sh
